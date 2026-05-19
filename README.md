@@ -1,147 +1,149 @@
-# 🚀 2026 QA Comeback - Postman API Collection
+# 🧪 QA API Testing Project (Postman) — 2026 Comeback
 
-> A simple REST API testing collection created with Postman as part of my 2026 QA comeback journey.
+## 📌 Overview
 
----
+This project is part of my QA comeback journey focused on Manual QA and API testing skills.
+It demonstrates API testing using Postman, including positive and negative test scenarios, assertions, and response validation.
 
-# 📌 Project Overview
-
-This collection demonstrates basic API testing operations against a local Task Board application using:
-
-- ✅ GET Requests
-- ✅ POST Requests
-- ✅ PATCH Requests
-- ✅ DELETE Requests
-
-The project focuses on practicing:
-- 🌐 REST API testing
-- 🧪 CRUD operations
-- 📬 Postman collections
-- 🔍 Request validation
-- ⚡ QA workflow fundamentals
+The goal is to simulate real QA work by validating REST API behavior, detecting inconsistencies, and ensuring response correctness.
 
 ---
 
-# 🛠️ Technologies Used
+## 🌐 API Used
 
-| Tool | Purpose |
-|------|----------|
-| 📬 Postman | API Testing |
-| 🌐 REST API | Backend communication |
-| 🧾 JSON | Request body formatting |
-| 💻 Localhost Server | Local API testing |
-| 🔧 HTTP Methods | CRUD operations |
+This project uses the ReqRes mock API:
 
----
+https://reqres.in/
 
-# 📂 Collection Endpoints
+ReqRes provides simulated REST endpoints for:
 
-## 📥 GET - Retrieve All Tasks
-
-```http
-GET http://localhost:8080/api/tasks
-```
-
-✔️ Retrieves all available tasks from the task board.
+* User management
+* Authentication
+* CRUD operations
+* Negative test scenarios
 
 ---
 
-## ➕ POST - Create a New Task
+## 🧪 Tools Used
 
-```http
-POST http://localhost:8080/api/tasks/
-```
-
-### 📦 Request Body
-
-```json
-{
-  "title": "Creating a task trough postman 2026 comeback",
-  "description": "Testing API - post functionality"
-}
-```
-
-✔️ Creates a new task inside the application.
+* Postman
+* JavaScript (Postman Test Scripts)
+* REST API
+* ReqRes API (Mock backend)
 
 ---
 
-## ✏️ PATCH - Edit Existing Task
+## 📁 Project Structure
 
-```http
-PATCH http://localhost:8080/api/tasks/7
-```
-
-### 📦 Request Body
-
-```json
-{
-  "id": 7,
-  "title": "Edited task",
-  "description": "Testing API - PATCH functionality"
-}
-```
-
-✔️ Updates an existing task by ID.
+QA-API-Testing-Project/
+│
+├── postman-collection/
+│ └── reqres-day2.postman_collection.json
+│
+├── test-cases/
+│ └── (future manual test cases)
+│
+├── bug-reports/
+│ └── (future bug reports)
+│
+└── README.md
 
 ---
 
-## ❌ DELETE - Remove Task
+## 📌 API Endpoints Tested
 
-```http
-DELETE http://localhost:8080/api/tasks/9
-```
+### 🟢 Users
 
-✔️ Deletes a task from the task board.
+* GET /api/users?page=2
+* GET /api/users/{id}
 
----
+### 🔐 Authentication
 
-# 🎯 Learning Goals
+* POST /api/login
 
-This project helped reinforce knowledge in:
+### 🔴 Negative Tests
 
-- ✅ API Testing
-- ✅ CRUD Operations
-- ✅ HTTP Methods
-- ✅ JSON Payloads
-- ✅ Postman Collections
-- ✅ Backend Communication
-- ✅ QA Testing Practices
+* Missing password login
+* Invalid credentials handling
 
 ---
 
-# 📸 Example Workflow
+## 🧪 Test Coverage
 
-```text
-npm installation of environment
+The following validations are included:
+
+### ✔ Status Code Validation
+
+* Ensuring correct HTTP responses (200, 400, etc.)
+
+### ✔ Response Body Validation
+
+* Checking presence of data fields
+* Validating error messages
+* Ensuring correct data structure
+
+### ✔ Data Integrity Checks
+
+* Array length validation
+* Field format validation (e.g., avatar URL)
+
+### ✔ Negative Testing
+
+* Missing required fields
+* Invalid login attempts
+
 ---
-GET ➜ Create Task ➜ Edit Task ➜ Delete Task
+
+## 🧠 Example Test Snippet
+
+```javascript
+pm.test("Status code is 200", function () {
+    pm.response.to.have.status(200);
+});
+
+pm.test("Response contains data array", function () {
+    let jsonData = pm.response.json();
+    pm.expect(jsonData.data).to.be.an("array");
+});
 ```
 
 ---
 
-# 📚 Future Improvements
+## 🐞 Notes on API Behavior
 
-- 🔐 Authentication testing
-- 🧪 Automated API assertions
-- ⚡ Newman CLI integration
-- 🔄 CI/CD integration
-- 📊 Test reporting
-- 🐳 Dockerized API environment
+During testing, some inconsistencies were observed in error handling responses.
+Since ReqRes is a mock API, some responses may not reflect real backend validation logic.
 
----
+These scenarios were still useful for practicing:
 
-# 👨‍💻 Author
-
-QA Comeback Journey - 2026 🚀
-
-Focused on:
-- Manual QA
-- API Testing
-- Automation Fundamentals
-- Continuous Improvement
+* negative testing
+* response validation
+* QA observation skills
 
 ---
 
-# ⭐ Repository Purpose
+## 🎯 Learning Objectives
 
-This repository is part of my personal effort to refresh and strengthen my QA and API testing skills while building a cleaner and more professional GitHub portfolio.
+This project helped me practice:
+
+* REST API testing with Postman
+* Writing automated test scripts
+* Negative test scenario design
+* API response validation
+* QA thinking and bug identification mindset
+
+---
+
+## 🚀 Future Improvements
+
+* Add Postman environment variables
+* Add Newman CLI execution
+* Integrate into CI pipeline (GitHub Actions)
+* Add structured bug reports
+* Expand test coverage with more edge cases
+
+---
+
+## 👨‍💻 Author
+
+QA Engineer in training — 2026 Comeback Project
