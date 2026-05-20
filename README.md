@@ -1,149 +1,108 @@
-# 🧪 QA API Testing Project (Postman) — 2026 Comeback
+# 2026 Comeback — API Testing Portfolio Project
 
-## 📌 Overview
+## 📌 Project Overview
 
-This project is part of my QA comeback journey focused on Manual QA and API testing skills.
-It demonstrates API testing using Postman, including positive and negative test scenarios, assertions, and response validation.
+This repository contains my API Testing practice and QA portfolio work focused on:
 
-The goal is to simulate real QA work by validating REST API behavior, detecting inconsistencies, and ensuring response correctness.
+* Manual API Testing
+* CRUD Operations Testing
+* Authentication Testing
+* Negative Testing
+* Boundary & Edge Case Testing
+* Security-Oriented Test Scenarios
 
----
-
-## 🌐 API Used
-
-This project uses the ReqRes mock API:
-
-https://reqres.in/
-
-ReqRes provides simulated REST endpoints for:
-
-* User management
-* Authentication
-* CRUD operations
-* Negative test scenarios
+The project is built as part of my 2026 QA comeback roadmap and focuses on practical QA workflows using Postman and GitHub.
 
 ---
 
-## 🧪 Tools Used
+## 🛠 Technologies & Tools
 
 * Postman
-* JavaScript (Postman Test Scripts)
-* REST API
-* ReqRes API (Mock backend)
+* Newman (planned)
+* REST API Testing
+* JSON
+* Git & GitHub
+* Manual QA Methodologies
 
 ---
 
-## 📁 Project Structure
+## 🧪 Current Test Coverage
 
-QA-API-Testing-Project/
+### CRUD Operations
+
+* Create User
+* Read User Data
+* Update User Information
+* Delete User
+
+### Authentication Testing
+
+* Valid Login
+* Invalid Credentials
+* Missing Fields
+* Empty Inputs
+
+### Negative Testing
+
+* Invalid Request Data
+* Missing Parameters
+* Incorrect Input Formats
+
+### Security Testing
+
+* SQL Injection Scenarios
+* Unauthorized Access Validation
+
+### Boundary Testing
+
+* Empty Fields
+* Null Values
+* Extremely Large Inputs
+* Invalid Formats
+
+---
+
+## 📂 Project Structure
+
+```text
+Comeback-2026-API-Testing/
 │
-├── postman-collection/
-│ └── reqres-day2.postman_collection.json
+├── README.md
+│
+├── postman-collections/
+│   ├── reqres-api-tests-v1.postman_collection.json
+│   ├── reqres-api-tests-v2-day2.postman_collection.json
 │
 ├── test-cases/
-│ └── (future manual test cases)
+│   ├── login-api-test-cases.md
+│   ├── user-management-api-test-cases.md
 │
 ├── bug-reports/
-│ └── (future bug reports)
+│   ├── api-bug-reports.md
 │
-└── README.md
-
----
-
-## 📌 API Endpoints Tested
-
-### 🟢 Users
-
-* GET /api/users?page=2
-* GET /api/users/{id}
-
-### 🔐 Authentication
-
-* POST /api/login
-
-### 🔴 Negative Tests
-
-* Missing password login
-* Invalid credentials handling
-
----
-
-## 🧪 Test Coverage
-
-The following validations are included:
-
-### ✔ Status Code Validation
-
-* Ensuring correct HTTP responses (200, 400, etc.)
-
-### ✔ Response Body Validation
-
-* Checking presence of data fields
-* Validating error messages
-* Ensuring correct data structure
-
-### ✔ Data Integrity Checks
-
-* Array length validation
-* Field format validation (e.g., avatar URL)
-
-### ✔ Negative Testing
-
-* Missing required fields
-* Invalid login attempts
-
----
-
-## 🧠 Example Test Snippet
-
-```javascript
-pm.test("Status code is 200", function () {
-    pm.response.to.have.status(200);
-});
-
-pm.test("Response contains data array", function () {
-    let jsonData = pm.response.json();
-    pm.expect(jsonData.data).to.be.an("array");
-});
+├── screenshots/
+│
+└── newman/
 ```
 
 ---
 
-## 🐞 Notes on API Behavior
+## 🔄 Planned Improvements
 
-During testing, some inconsistencies were observed in error handling responses.
-Since ReqRes is a mock API, some responses may not reflect real backend validation logic.
-
-These scenarios were still useful for practicing:
-
-* negative testing
-* response validation
-* QA observation skills
+* Newman automation flow for CRUD operations
+* Automated collection execution
+* CI/CD integration
+* Expanded security testing
+* Additional API coverage
 
 ---
 
-## 🎯 Learning Objectives
+## Goals
 
-This project helped me practice:
+This repository is focused on improving:
 
-* REST API testing with Postman
-* Writing automated test scripts
-* Negative test scenario design
-* API response validation
-* QA thinking and bug identification mindset
-
----
-
-## 🚀 Future Improvements
-
-* Add Postman environment variables
-* Add Newman CLI execution
-* Integrate into CI pipeline (GitHub Actions)
-* Add structured bug reports
-* Expand test coverage with more edge cases
-
----
-
-## 👨‍💻 Author
-
-QA Engineer in training — 2026 Comeback Project
+* QA thinking
+* API validation skills
+* Test design
+* Automation preparation
+* Professional QA documentation
