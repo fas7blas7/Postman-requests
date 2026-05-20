@@ -1,28 +1,14 @@
 {
-	"id": "e91921c6-a2bd-4b3a-a296-1a2297badeaf",
-	"name": "Local QA",
-	"values": [
-		{
-			"key": "baseUrl",
-			"value": "http://localhost:3000",
-			"type": "default",
-			"enabled": true
-		},
-		{
-			"key": "userID",
-			"value": "",
-			"type": "default",
-			"enabled": true
-		},
-		{
-			"key": "userId",
-			"value": "",
-			"type": "any",
-			"enabled": true
-		}
-	],
-	"color": null,
-	"_postman_variable_scope": "environment",
-	"_postman_exported_at": "2026-05-20T14:15:12.515Z",
-	"_postman_exported_using": "Postman/12.11.3"
+  "values": [
+    {
+      "key": "baseUrl",
+      "value": "http://localhost:3000",
+      "enabled": true
+    },
+    {
+      "key": "userId",
+      "value": "",
+      "enabled": true
+    }
+  ]
 }

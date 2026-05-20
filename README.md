@@ -57,7 +57,7 @@ A local JSON Server API is used to simulate a real backend system for full CRUD 
 - Missing parameters
 
 ### 🔹 Security-Oriented Scenarios
-- SQL injection simulation
+- Basic SQL injection test scenarios
 - Unauthorized access handling
 - Input sanitization checks
 
@@ -90,7 +90,9 @@ API Testing/
 │
 ├── local-api/
 │   ├── db.json
-🚀 How to Run the Project
+```
+
+## 🚀 How to Run the Project
 1. Start Local API
 json-server db.json
 
@@ -136,4 +138,4 @@ Professional documentation and portfolio readiness
 📌 Notes
 This project uses a local JSON Server for API simulation
 Tests are designed to mimic real backend behavior
-Newman is used as a lightweight CI-style execution tool
+Newman is used for automated API collection execution and reporting
