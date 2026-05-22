@@ -24,6 +24,7 @@ REST API Testing
 JavaScript (Postman test scripts)
 Git & GitHub
 Manual QA methodologies
+
 🧪 Test Coverage
 🔹 CRUD Operations
 Create user
@@ -50,6 +51,7 @@ Missing parameters
 Basic SQL injection test scenarios
 Unauthorized access handling
 Input sanitization checks
+
 📂 Project Structure
 API Testing/
 │
@@ -78,21 +80,25 @@ API Testing/
 │
 ├── local-api/
 │   ├── db.json
+
 🚀 How to Run the Project
+
 1️⃣ Start Local API
 json-server db.json
 
 API runs at:
-
 http://localhost:3000
+
 2️⃣ Run Postman Collection (Manual)
 
 Import collection from:
 
 postman/collections/
+
 3️⃣ Run Automated Tests (Newman)
 cd newman
 newman run collection.json -e environment.json
+
 4️⃣ Run Tests with Docker
 docker compose up --build
 
@@ -102,8 +108,8 @@ This executes the Newman collection inside a containerized environment.
 newman run collection.json -e environment.json -r htmlextra
 
 Reports are saved in:
-
 / reports
+
 📊 Execution Summary
 
 ✔ CRUD lifecycle fully automated
@@ -122,6 +128,7 @@ Expand negative test coverage
 Add data-driven testing
 Improve schema validation tests
 Extend API scenarios beyond CRUD
+
 🎯 Project Goals
 
 This repository focuses on improving:
@@ -132,6 +139,7 @@ Automation with Newman
 Dockerized QA workflows
 Real-world QA workflow simulation
 Professional documentation and portfolio readiness
+
 📌 Notes
 This project uses a local JSON Server for API simulation
 Tests are designed to mimic real backend behavior
