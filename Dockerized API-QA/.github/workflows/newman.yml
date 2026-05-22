@@ -23,7 +23,7 @@ jobs:
         run: |
           mkdir -p newman/reports
           newman run newman/collections/dummyjson.json \
-            -e newman/environments/dummyjson.env.json \
+            -e newman/environments/dummyjson-environment.env.json \
             -r cli,htmlextra \
             --reporter-htmlextra-export newman/reports/report.html
 
