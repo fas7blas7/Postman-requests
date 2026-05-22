@@ -4,6 +4,34 @@
 
 This repository showcases my QA Automation and API Testing practice as part of my 2026 QA comeback roadmap.
 
+## 🧭 Repository Structure
+
+This repository contains two QA domains:
+
+### 1. API Automation Framework (CI/CD Ready)
+Located in:
+Dockerized-API-QA/
+
+Includes:
+- Postman + Newman automation
+- GitHub Actions CI pipeline
+- Multi-environment testing (ReqRes, DummyJSON)
+- Dockerized execution
+- HTML reporting
+
+---
+
+### 2. Local API Testing & QA Practice Lab
+Located in:
+Local APIs/
+
+Includes:
+- Manual API testing cases
+- Bug reports
+- Local JSON server data
+- Postman exploratory collections
+- Test design documentation
+
 It demonstrates a real-world API testing workflow using:
 
 - Manual API testing (Postman)
