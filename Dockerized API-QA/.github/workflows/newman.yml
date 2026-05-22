@@ -1,0 +1,57 @@
+name: Newman API Tests (ReqRes + DummyJSON)
+
+on:
+  push:
+    branches: [ "main" ]
+
+  workflow_dispatch:
+    inputs:
+      api:
+        description: "Select API to run"
+        required: true
+        default: "dummyjson"
+        type: choice
+        options:
+          - dummyjson
+          - reqres
+
+jobs:
+  api-tests:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "18"
+
+      - name: Install Newman + Reporter
+        run: npm install -g newman newman-reporter-htmlextra
+
+      - name: Select collection + environment (your structure)
+        id: vars
+        run: |
+          if [ "${{ github.event.inputs.api }}" = "reqres" ]; then
+            echo "collection=newman/collections/reqres.json" >> $GITHUB_OUTPUT
+            echo "env=newman/environments/reqres.env.json" >> $GITHUB_OUTPUT
+          else
+            echo "collection=newman/collections/dummyjson.json" >> $GITHUB_OUTPUT
+            echo "env=newman/environments/dummyjson.env.json" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Run Newman tests
+        run: |
+          mkdir -p newman/reports
+          newman run ${{ steps.vars.outputs.collection }} \
+            -e ${{ steps.vars.outputs.env }} \
+            -r cli,htmlextra \
+            --reporter-htmlextra-export newman/reports/report.html
+
+      - name: Upload report artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: newman-html-report
+          path: newman/reports/report.html
