@@ -1,7 +1,7 @@
 {
   "info": {
-    "_postman_id": "38694204-46e5-48f6-b6c5-3cc2b95ce728",
-    "name": "Local API - User CRUD QA Flow",
+    "_postman_id": "4c4d4a6e-c68c-4125-a830-abfcfcf4ff19",
+    "name": "dummyjson-user-crud",
     "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
     "_exporter_id": "33962603"
   },
@@ -35,7 +35,7 @@
         "header": [],
         "body": {
           "mode": "raw",
-          "raw": "{\r\n    \"username\": \"testuser\",\r\n    \"email\": \"test@email.com\"\r\n}",
+          "raw": "{\r\n    \"id\": \"31\",\r\n    \"firstname\": \"testuser\",\r\n    \"lastname\": \"lastname\",\r\n    \"email\": \"test@email.com\"\r\n}",
           "options": {
             "raw": {
               "language": "json"
@@ -43,12 +43,13 @@
           }
         },
         "url": {
-          "raw": "{{baseUrl}}/users",
+          "raw": "{{baseUrl}}/users/add",
           "host": [
             "{{baseUrl}}"
           ],
           "path": [
-            "users"
+            "users",
+            "add"
           ]
         }
       },
@@ -61,8 +62,8 @@
           "listen": "test",
           "script": {
             "exec": [
-              "pm.test(\"User is returned\", function(){\r",
-              "    pm.response.to.have.status(200);\r",
+              "pm.test(\"Status is successful\", function () {\r",
+              "    pm.expect(pm.response.code).to.be.oneOf([200, 201]);\r",
               "});"
             ],
             "type": "text/javascript",
@@ -87,13 +88,13 @@
           }
         },
         "url": {
-          "raw": "{{baseUrl}}/users/{{userId}}",
+          "raw": "{{baseUrl}}/c/b091-55b2-4ae2-8c16",
           "host": [
             "{{baseUrl}}"
           ],
           "path": [
-            "users",
-            "{{userId}}"
+            "c",
+            "b091-55b2-4ae2-8c16"
           ]
         }
       },
@@ -118,8 +119,12 @@
         {
           "listen": "prerequest",
           "script": {
+            "exec": [
+              ""
+            ],
+            "type": "text/javascript",
             "packages": {},
-            "type": "text/javascript"
+            "requests": {}
           }
         }
       ],
@@ -136,13 +141,15 @@
           }
         },
         "url": {
-          "raw": "{{baseUrl}}/users/{{userId}}",
+          "raw": "https://dummyjson.com/c/0163-e675-4b14-8895",
+          "protocol": "https",
           "host": [
-            "{{baseUrl}}"
+            "dummyjson",
+            "com"
           ],
           "path": [
-            "users",
-            "{{userId}}"
+            "c",
+            "0163-e675-4b14-8895"
           ]
         }
       },
@@ -173,13 +180,13 @@
           "raw": ""
         },
         "url": {
-          "raw": "{{baseUrl}}/users/{{userId}}",
+          "raw": "{{baseUrl}}/c/68ae-97e5-4bc0-89b7",
           "host": [
             "{{baseUrl}}"
           ],
           "path": [
-            "users",
-            "{{userId}}"
+            "c",
+            "68ae-97e5-4bc0-89b7"
           ]
         }
       },
@@ -198,7 +205,7 @@
               "\r",
               "pm.test(\"Error message is returned\", function(){\r",
               "    const json = pm.response.json();\r",
-              "    pm.expect(json.message || json.error).to.include(\"Not found\");\r",
+              "    pm.expect(json.message || json.error).to.include(\"not found\");\r",
               "});"
             ],
             "type": "text/javascript",
