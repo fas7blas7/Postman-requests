@@ -180,9 +180,11 @@
           "raw": ""
         },
         "url": {
-          "raw": "{{baseUrl}}/c/68ae-97e5-4bc0-89b7",
+          "raw": "https://dummyjson.com/c/68ae-97e5-4bc0-89b7",
+          "protocol": "https",
           "host": [
-            "{{baseUrl}}"
+            "dummyjson",
+            "com"
           ],
           "path": [
             "c",
