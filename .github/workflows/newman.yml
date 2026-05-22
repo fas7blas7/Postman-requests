@@ -19,11 +19,12 @@ jobs:
       - name: Install Newman
         run: npm install -g newman newman-reporter-htmlextra
 
-      - name: Run tests
+      - name: Run Newman tests
         run: |
-          mkdir -p newman/reports
-          newman run "C:\Users\skyli\Desktop\QA-2026-Comeback\API Testing\.github\newman\collections\dummyjson.collection.json" \
-            -e       "C:\Users\skyli\Desktop\QA-2026-Comeback\API Testing\.github\newman\environments\dummyjson.env.json" \
+          pwd
+          ls -R Dockerized-API-Testing/newman
+          newman run Dockerized-API-Testing/newman/collections/dummyjson.json \
+            -e       Dockerized-API-Testing/newman/environments/dummyjson.env.json \
             -r cli,htmlextra \
             --reporter-htmlextra-export newman/reports/report.html
 
