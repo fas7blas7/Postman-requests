@@ -108,7 +108,6 @@ API Testing/
 │
 ├── .github
 │   ├── workflows
-<<<<<<< HEAD
 │
 ├── Dockerized-API-QA/
 │   ├── api/
@@ -148,47 +147,6 @@ API Testing/
 ├── screenshots/
 │
 │── readme.md
-=======
-│
-├── Dockerized-API-QA/
-│   ├── api/
-│   ├── reports
-│   ├── newman/
-│     ├── collections/
-│       ├── dummyjson.json
-│       ├── reqres.json
-│     ├── environments/
-│       ├── dummyjson.env.json
-│       ├── reqres.env.json
-│
-├── Local APIs/
-│   ├── bug-reports/
-│     ├── api-bug-reports.md
-│
-│   ├── local-data/
-│     ├── db.json
-│
-│   ├── newman/
-│     ├── collection.json
-│     ├── environment.json
-│
-│   ├── postman-local/
-│     ├── reqres-api-tests-v1.postman_collection.json
-│     ├── reqres-api-tests-v2-day2.postman_collection.json
-│
-│   ├── reports/
-│     ├── newman-report.html
-│
-│   ├── test-cases/
-│     ├── login-api-test-cases.md
-│     ├── user-management-api-test-cases.md
-│
-│
-│
-├── screenshots/
-│
-│── readme.md
->>>>>>> a84cd10f716eb333410165812ef90b6068884ced
 
 ```
 🚀 How to Run the Project
