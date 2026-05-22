@@ -22,8 +22,8 @@ jobs:
       - name: Run tests
         run: |
           mkdir -p newman/reports
-          newman run newman/collections/dummyjson.json \
-            -e newman/environments/dummyjson-environment.json \
+          newman run newman/collections/dummyjson.collection.json \
+            -e newman/environments/dummyjson.env.json \
             -r cli,htmlextra \
             --reporter-htmlextra-export newman/reports/report.html
 
