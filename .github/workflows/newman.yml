@@ -20,10 +20,11 @@ jobs:
         run: npm install -g newman newman-reporter-htmlextra
 
       - name: Run tests
+        working-directory: "API TESTING/Dockerized-API-QA"
         run: |
           mkdir -p newman/reports
-          newman run API TESTING/Dockerized-API-QA/newman/collections/dummyjson.json \
-            -e API TESTING/Dockerized-API-QA/newman/environments/dummyjson.env.json \
+          newman run /newman/collections/dummyjson.collection.json \
+            -e       /newman/environments/dummyjson.env.json \
             -r cli,htmlextra \
             --reporter-htmlextra-export newman/reports/report.html
 
