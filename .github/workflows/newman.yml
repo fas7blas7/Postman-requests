@@ -33,3 +33,6 @@ jobs:
         with:
           name: newman-report
           path: newman/reports/report.html
+
+      - name: Show repo structure (DEBUG)
+        run: ls -R
