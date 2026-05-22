@@ -22,7 +22,7 @@ jobs:
       - name: Run Newman tests
         run: |
           pwd
-          ls -R Dockerized-API-Testing/newman
+          ls -R Dockerized-API-QA/newman
           newman run Dockerized-API-QA/newman/collections/dummyjson.json \
             -e       Dockerized-API-QA/newman/environments/dummyjson.env.json \
             -r cli,htmlextra \
