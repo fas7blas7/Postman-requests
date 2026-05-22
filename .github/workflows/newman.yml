@@ -22,8 +22,8 @@ jobs:
       - name: Run tests
         run: |
           mkdir -p newman/reports
-          newman run "API TESTING/.github/newman/collections/dummyjson.collection.json" \
-            -e       "API TESTING/.github/newman/environments/dummyjson.env.json" \
+          newman run "C:\Users\skyli\Desktop\QA-2026-Comeback\API Testing\.github\newman\collections\dummyjson.collection.json" \
+            -e       "C:\Users\skyli\Desktop\QA-2026-Comeback\API Testing\.github\newman\environments\dummyjson.env.json" \
             -r cli,htmlextra \
             --reporter-htmlextra-export newman/reports/report.html
 
