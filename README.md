@@ -1,93 +1,29 @@
-2026 Comeback — API Testing Automation Portfolio
-📌 Project Overview
+# 2026 Comeback — API Testing Automation Portfolio
 
-This repository showcases my QA Automation and API Testing practice as part of my 2026 QA comeback roadmap.
-It demonstrates real-world API testing workflows using Postman, Newman, Docker, and manual QA practices.
+---
 
-🧭 Repository Structure
+## 📌 Overview
 
-This repository contains two QA domains:
+This project demonstrates a **real-world API testing automation framework** built as part of my QA comeback roadmap.
 
-1. API Automation Framework (CI/CD Ready)
+It focuses on end-to-end API validation using automation, CI execution, and structured test design principles.
 
-Located in:
+Built with:
 
-Dockerized-API-QA/
-Includes:
-Postman + Newman automation
-GitHub Actions CI pipeline (planned/in progress)
-Multi-environment testing (ReqRes, DummyJSON)
-Dockerized execution
-HTML reporting (htmlextra)
-
-▶ How to Run API Automation
-Run without environment (local / collection variables)
-
-From:
-
-Dockerized-API-QA/newman/collections
-npx newman run dummyjson.json -r cli,htmlextra
-
-Run with environment (recommended / CI mode)
-
-From project root:
-
-npx newman run collections/dummyjson.json -e environments/dummyjson.env.json -r cli,htmlextra
-
-2. Local API Testing & QA Practice Lab
-
-Located in:
-
-Local APIs/
-Includes:
-Manual API test cases
-Bug reports
-Local JSON Server setup
-Postman exploratory collections
-Test design documentation
-
-A local JSON Server is used to simulate backend behavior for full CRUD testing.
-
-🛠 Technologies & Tools
 Postman
-Newman (CLI automation runner)
-Docker & Docker Compose
-JSON Server (local API simulation)
-REST API Testing
-JavaScript (Postman test scripts)
-Git & GitHub
-Manual QA methodologies
-🧪 Test Coverage
-🔹 CRUD Operations
-Create user
-Retrieve user data
-Update user information
-Delete user
-End-to-end lifecycle validation
-🔹 Authentication & Input Validation
-Valid login scenarios
-Invalid credentials
-Missing fields validation
-Empty input handling
-🔹 Negative Testing
-Invalid request payloads
-Non-existent resource access
-Incorrect endpoints
-Error response validation
-🔹 Boundary & Edge Cases
-Empty values
-Max/min input lengths
-Invalid formats
-Missing parameters
-🔹 Security-Oriented Scenarios
-Basic injection test scenarios
-Unauthorized access handling
-Input sanitization checks
-📂 Project Structure
+Newman
+Docker
+GitHub Actions
+JSON Server
+
+---
+
+## 🧭 Project Structure
+
+```
 API Testing/
 │
 ├── Dockerized-API-QA/
-│   ├── api/
 │   ├── newman/
 │   │   ├── collections/
 │   │   ├── environments/
@@ -98,73 +34,143 @@ API Testing/
 ├── Local APIs/
 │   ├── bug-reports/
 │   ├── local-data/
-│   ├── newman/
 │   ├── postman-local/
-│   ├── reports/
 │   ├── test-cases/
+│   ├── reports/
 │
 ├── screenshots/
 │   ├── newman-cli-basic.png
-│    ├── newman-cli-env.png
-│    ├── report-basic.png
-│    ├── report-env.png
-│    ├── postman-collection.png
+│   ├── newman-cli-env.png
+│   ├── report-basic.png
+│   ├── report-env.png
+│   ├── postman-collection.png
+```
 
-🚀 Additional Run Commands
-Start Local API
-json-server db.json
-Run Postman Collection (manual)
+---
 
-Import collections from:
+## 🚀 CI/CD Pipeline
 
-Local APIs/postman-local/
-Run Dockerized Tests
+This project uses entity["software","GitHub Actions","CI/CD automation platform"] for continuous testing.
+
+On every push to `main`:
+
+1. Repository is checked out
+2. Node.js environment is set up
+3. Dependencies are installed
+4. API tests are executed using entity["software","Newman","Postman CLI collection runner"]
+5. HTML report is generated (htmlextra)
+6. Report is uploaded as artifact
+
+👉 CI Status is visible via badge at the top of this README
+
+---
+
+## 🧪 Test Coverage
+
+### ✔ CRUD Operations
+
+* Create user
+* Read user data
+* Update user information
+* Delete user
+* Full lifecycle validation
+
+### ✔ Negative Testing
+
+* Invalid endpoints
+* Missing fields
+* Non-existent resources
+* Error response validation
+
+### ✔ Boundary Testing
+
+* Empty values
+* Invalid formats
+* Edge-case payloads
+
+---
+
+## ▶ How to Run
+
+### Local Execution
+
+```bash
+cd Dockerized-API-QA/newman
+newman run collections/dummyjson.json -r htmlextra
+```
+
+---
+
+### With Environment
+
+```bash
+newman run collections/dummyjson.json \
+-e environments/dummyjson.env.json \
+-r htmlextra
+```
+
+---
+
+### Docker Execution
+
+```bash
 docker compose up --build
-Generate HTML Report
-newman run collection.json -e environment.json -r htmlextra
-📊 Execution Summary
-CRUD lifecycle fully automated
-Dockerized Newman execution working
-Collection runs inside containers
-Negative scenarios covered
-PATCH update workflow stable
-HTML reporting implemented
-CI-ready structure prepared
-🔄 Planned Improvements
-GitHub Actions CI pipeline
-Improved HTML reporting
-Multi-environment expansion
-More negative test coverage
-Data-driven testing
-Schema validation improvements
-Extended API scenarios beyond CRUD
-🎯 Project Goals
-QA mindset & test design thinking
-API lifecycle validation
-Automation with Newman
-Dockerized QA workflows
-Real-world QA simulation
-Professional portfolio readiness
-📌 Notes
-Uses local JSON Server for API simulation
-Tests mimic real backend behavior
-Newman used for automation execution
-Docker ensures reproducibility
+```
 
-## 📌 Status
-✔ Completed (core automation framework)  
-🟡 CI/CD pipeline (next step)
+---
+
+## 📊 CI Execution Result
+
+* Automated execution via entity["software","GitHub Actions","CI/CD automation platform"]
+* HTML reports generated using Newman htmlextra reporter
+* Artifacts stored per run
+
+👉 View runs: [https://github.com/fas7blas7/Postman-requests/actions](https://github.com/fas7blas7/Postman-requests/actions)
+
+---
+
+## 📸 Execution Evidence
+
+### CLI Execution
+
+* Newman terminal output (local + CI)
+
+### HTML Report
+
+* htmlextra report dashboard
+* request/response validation details
+
+### Postman Collection
+
+* Structured API test suite
+* Environment variable usage
+
+---
 
 ## ⭐ Key Highlights
 
-- Fully automated API test suite using Postman + Newman
-- Environment-based execution (dev/staging simulation)
-- HTML reporting with htmlextra
-- CLI-based test execution for CI/CD readiness
-- CRUD lifecycle validation
-- Docker-ready execution structure
+* Fully automated API testing framework
+* CI/CD integration with GitHub Actions
+* Environment-based execution support
+* Dockerized test execution
+* HTML reporting (htmlextra)
+* CRUD lifecycle validation
+* Portfolio-ready QA structure
 
-🔗 Repository
+---
 
-This project is available on GitHub:
-https://github.com/fas7blas7/Postman-requests
+## 🛠 Technologies
+
+entity["software","Postman","API testing and collaboration platform"] • entity["software","Newman","Postman CLI collection runner"] • entity["software","Docker","containerization platform"] • entity["software","GitHub Actions","CI/CD automation platform"] • entity["software","JSON Server","mock REST API server"] • REST API Testing • JavaScript • Git
+
+---
+
+## 📌 Status
+
+✔ Completed (API automation framework) 🟢 CI/CD pipeline active
+
+---
+
+## 🔗 Repository
+
+[https://github.com/fas7blas7/Postman-requests](https://github.com/fas7blas7/Postman-requests)
