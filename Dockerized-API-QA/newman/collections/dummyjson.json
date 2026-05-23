@@ -5,6 +5,12 @@
     "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
     "_exporter_id": "33962603"
   },
+  "variable": [
+  {
+    "key": "baseUrl",
+    "value": "https://dummyjson.com"
+  }
+],
   "item": [
     {
       "name": "Create User",

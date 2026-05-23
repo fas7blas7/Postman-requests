@@ -111,14 +111,25 @@ API Testing/
 │
 ├── Dockerized-API-QA/
 │   ├── api/
-│   ├── reports
+│
 │   ├── newman/
 │     ├── collections/
 │       ├── dummyjson.json
 │       ├── reqres.json
+│
 │     ├── environments/
 │       ├── dummyjson.env.json
 │       ├── reqres.env.json
+│
+│     ├── node_modules/
+│
+│     ├── reports/
+│       ├── report.html
+│
+│     ├── package.json
+│     ├── package-lock.json
+│
+│   ├── docker-compose.yml
 │
 ├── Local APIs/
 │   ├── bug-reports/
