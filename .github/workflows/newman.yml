@@ -2,7 +2,7 @@ name: Newman API Tests
 
 on:
   push:
-    branches: [ "main" ]
+    branches: ["main"]
   workflow_dispatch:
 
 jobs:
@@ -19,20 +19,18 @@ jobs:
       - name: Install Newman
         run: npm install -g newman newman-reporter-htmlextra
 
+      - name: Create reports folder
+        run: mkdir -p Dockerized-API-QA/newman/reports
+
       - name: Run Newman tests
         run: |
-          pwd
-          ls -R Dockerized-API-QA/newman
           newman run Dockerized-API-QA/newman/collections/dummyjson.json \
-            -e       Dockerized-API-QA/newman/environments/dummyjson.env.json \
-            -r cli,htmlextra \
-            --reporter-htmlextra-export newman/reports/report.html
+            -e Dockerized-API-QA/newman/environments/dummyjson.env.json \
+            -r htmlextra \
+            --reporter-htmlextra-export Dockerized-API-QA/newman/reports/report.html
 
       - name: Upload report
         uses: actions/upload-artifact@v4
         with:
           name: newman-report
-          path: newman/reports/report.html
-
-      - name: Show repo structure (DEBUG)
-        run: ls -R
+          path: Dockerized-API-QA/newman/reports/report.html
