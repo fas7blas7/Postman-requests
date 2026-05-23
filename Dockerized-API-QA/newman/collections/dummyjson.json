@@ -5,12 +5,6 @@
     "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
     "_exporter_id": "33962603"
   },
-  "variable": [
-  {
-    "key": "baseUrl",
-    "value": "https://dummyjson.com"
-  }
-],
   "item": [
     {
       "name": "Create User",
@@ -25,7 +19,7 @@
               "const json = pm.response.json();\r",
               "pm.environment.set(\"userId\", json.id);\r",
               "\r",
-              "console.log(pm.response.json());"
+              "//console.log(pm.response.json());"
             ],
             "type": "text/javascript",
             "packages": {},
@@ -49,9 +43,11 @@
           }
         },
         "url": {
-          "raw": "{{baseUrl}}/users/add",
+          "raw": "https://dummyjson.com/users/add",
+          "protocol": "https",
           "host": [
-            "{{baseUrl}}"
+            "dummyjson",
+            "com"
           ],
           "path": [
             "users",
@@ -94,9 +90,11 @@
           }
         },
         "url": {
-          "raw": "{{baseUrl}}/c/b091-55b2-4ae2-8c16",
+          "raw": "https://dummyjson.com/c/b091-55b2-4ae2-8c16",
+          "protocol": "https",
           "host": [
-            "{{baseUrl}}"
+            "dummyjson",
+            "com"
           ],
           "path": [
             "c",
@@ -139,7 +137,7 @@
         "header": [],
         "body": {
           "mode": "raw",
-          "raw": "{\r\n    \"username\": \"updateduser\"\r\n}",
+          "raw": "",
           "options": {
             "raw": {
               "language": "json"
@@ -233,9 +231,11 @@
           "raw": ""
         },
         "url": {
-          "raw": "{{baseUrl}}/users/{{userId}}",
+          "raw": "https://dummyjson.com/users/{{userId}}",
+          "protocol": "https",
           "host": [
-            "{{baseUrl}}"
+            "dummyjson",
+            "com"
           ],
           "path": [
             "users",
@@ -244,6 +244,36 @@
         }
       },
       "response": []
+    }
+  ],
+  "event": [
+    {
+      "listen": "prerequest",
+      "script": {
+        "type": "text/javascript",
+        "packages": {},
+        "requests": {},
+        "exec": [
+          ""
+        ]
+      }
+    },
+    {
+      "listen": "test",
+      "script": {
+        "type": "text/javascript",
+        "packages": {},
+        "requests": {},
+        "exec": [
+          ""
+        ]
+      }
+    }
+  ],
+  "variable": [
+    {
+      "key": "userId",
+      "value": ""
     }
   ]
 }
